@@ -19,7 +19,23 @@
     {% endfor %}
     </ul>
     <h1>{{some_list}}</h1>
-    
+    <br>
+    <!-- tags and if else statement-->
+    {% if user_logged_in %}
+    <h1>Welcome back you logged in</h1>
+    {% endif %}
+    <!-- tags if else and for-->
+    <br>
+    <ul>
+        {% for num in some_list %}
+            {% if num == 2 %}
+                <li>TWO</li>
+            {% else %}
+                <li>{{num}}</li>
+            {% endif %}
+        
+        {% endfor %}
+    </ul>
 
 
 </body>
