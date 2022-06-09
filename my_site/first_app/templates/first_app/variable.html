@@ -7,10 +7,20 @@
 </head>
 <body>
     <h1>VARIABLE.HTML</h1>
-    <h2>Her name was {{first_name}} and her last name was {{last_name}}</h2>
+    <h2>Her name was {{first_name | lower | capfirst}} and her last name was {{last_name | capfirst}}</h2>
     <h2>{{some_list.0}}</h2>
     <h2>{{some_dict.inside_key}}</h2>
     <h2>{# this is a comment #}</h2>
+    <br>
+    <!--h1>Tags and For loops</h1-->
+    <ul>
+    {% for k,v in some_dict.items %}
+        <li>{{k}} : {{v}}</li>
+    {% endfor %}
+    </ul>
+    <h1>{{some_list}}</h1>
+    
+
 
 </body>
 </html>
