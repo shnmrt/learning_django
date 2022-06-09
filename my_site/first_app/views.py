@@ -1,7 +1,7 @@
 from django.http import Http404, HttpResponseNotFound, HttpResponseRedirect
 from django.shortcuts import render
 from django.http.response import HttpResponse
-
+from django.urls import reverse
 # Create your views in here 
 
 articles = {
@@ -31,7 +31,8 @@ def num_page_view(request, num_page):
     topics_list = list(articles.keys()) # ['sports','finance','politics']
     topic = topics_list[num_page]
     
-    return HttpResponseRedirect(topic)
+    
+    return HttpResponseRedirect(reverse('topic-page',args=[topic]))
 
 """
 def add_view(request, num1, num2):
